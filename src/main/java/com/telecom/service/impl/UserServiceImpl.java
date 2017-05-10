@@ -22,6 +22,6 @@ public class UserServiceImpl implements UserService{
         result.setSuccess(true);
         result.setResult(userDao.query(name, password));
         result.setTotal(1);
-        return null;
+        return result;
     }
 }

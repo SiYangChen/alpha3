@@ -4,7 +4,7 @@ import com.telecom.dao.BusinessHallDao;
 import com.telecom.model.BusinessHall;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
  * Created by lee on 09/05/2017.
  */
 
-@Service
+@Repository
 public class BusinessHallDaoImpl implements BusinessHallDao {
     @Resource
     private JdbcTemplate jdbcTemplate;
