@@ -1,6 +1,9 @@
 package com.telecom.controller;
 
 import com.telecom.model.PageResult;
+import com.telecom.model.User;
+import com.telecom.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,11 +16,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping(value = "/user")
 public class UserController {
 
+    @Autowired
+    private UserService userService;
+
     @RequestMapping("/valid")
     @ResponseBody
-    public PageResult<Boolean> valid(@RequestParam(value = "name", required = true, defaultValue = "") String name,
+    public PageResult<User> valid(@RequestParam(value = "name", required = true, defaultValue = "") String name,
                             @RequestParam(value = "password", required = true, defaultValue = "") String password) {
 
-        return null;
+        PageResult<User> result = userService.query(name, password);
+        return result;
     }
 }

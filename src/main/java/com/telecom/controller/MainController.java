@@ -16,6 +16,7 @@ public class MainController {
     public ModelAndView login() {
         ModelAndView modelAndView = new ModelAndView("login");
 
+        //modelAndView.addObject("result", );
         return modelAndView;
     }
 
