@@ -11,7 +11,7 @@ import java.util.List;
 public interface CustomerApplyServie {
     PageResult<List<CustomerApply>> pageQueryCustomerApply(Integer page, Integer pageSize);
 
-    PageResult<List<CustomerApply>> queryCustomerApplyByBusinessId(String businessId);
+    PageResult<List<CustomerApply>> queryCustomerApplyByBusinessId(String businessId, Integer page, Integer pageSize);
 
     PageResult<Boolean> insertCustomerApply(CustomerApply customerApply);
 }

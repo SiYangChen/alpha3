@@ -11,7 +11,7 @@ public interface CustomerApplyDao {
 
     List<CustomerApply> pageQueryCustomerApply(Integer page, Integer pageSize);
 
-    List<CustomerApply> queryCustomerApplyByBusinessId(String businessId);
+    List<CustomerApply> queryCustomerApplyByBusinessId(String businessId, Integer page, Integer pageSize);
 
     Boolean insertCustomerApply(CustomerApply customerApply);
 }

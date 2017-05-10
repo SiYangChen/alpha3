@@ -11,4 +11,6 @@ public interface BusinessDao {
     List<Business> pageQueryBusiness(Integer page, Integer pageSize);
 
     Business getBusiness(long id);
+
+    Business getBusinessByKey(String businessKey);
 }

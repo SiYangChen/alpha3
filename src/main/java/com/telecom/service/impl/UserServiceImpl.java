@@ -18,6 +18,10 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public PageResult<User> query(String name, String password) {
+        PageResult<User> result = new PageResult<>();
+        result.setSuccess(true);
+        result.setResult(userDao.query(name, password));
+        result.setTotal(1);
         return null;
     }
 }

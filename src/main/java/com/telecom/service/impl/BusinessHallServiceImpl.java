@@ -18,11 +18,19 @@ public class BusinessHallServiceImpl implements BusinessHallService{
 
     @Override
     public PageResult<BusinessHall> getBusinessHall(long id) {
-        return null;
+        PageResult<BusinessHall> result = new PageResult<>();
+        result.setSuccess(true);
+        result.setResult(businessHallDao.getBusinessHall(id));
+        result.setTotal(1);
+        return result;
     }
 
     @Override
     public PageResult<BusinessHall> getNearestBusinessHall(Double longitude, Double latitude) {
+        PageResult<BusinessHall> result = new PageResult<>();
+        result.setSuccess(true);
+        result.setResult(businessHallDao.getNearestBusinessHall(longitude, latitude));
+        result.setTotal(1);
         return null;
     }
 }

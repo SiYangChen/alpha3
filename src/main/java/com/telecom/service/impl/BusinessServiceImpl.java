@@ -20,11 +20,22 @@ public class BusinessServiceImpl implements BusinessService{
 
     @Override
     public PageResult<Business> getBusiness(long id) {
-        return null;
+        PageResult<Business> result = new PageResult<>();
+        result.setSuccess(true);
+        result.setResult(businessDao.getBusiness(id));
+        result.setTotal(1);
+        return result;
     }
 
     @Override
     public PageResult<List<Business>> pageQueryBusiness(Integer page, Integer pageSize) {
+        PageResult<List<Business>> result = new PageResult<>();
+        List<Business> list = businessDao.pageQueryBusiness(page, pageSize);
+        result.setSuccess(true);
+        result.setResult(list);
+        result.setTotal(list.size());
+        result.setPage(page);
+        result.setPageSize(pageSize);
         return null;
     }
 }
